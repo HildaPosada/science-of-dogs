@@ -26,14 +26,14 @@ const App = () => {
             isMenuOpen ? 'block' : 'hidden'
           } absolute md:static top-16 left-0 w-full md:w-auto bg-red-600 md:bg-transparent md:flex space-y-4 md:space-y-0 md:space-x-8 p-6 md:p-0`}
         >
-          <a href="#booking" className="block md:inline hover:underline">
-            Booking
-          </a>
           <a href="#about" className="block md:inline hover:underline">
             About Us
           </a>
           <a href="#philosophy" className="block md:inline hover:underline">
             Philosophy
+          </a>
+          <a href="#research" className="block md:inline hover:underline">
+            Research
           </a>
         </nav>
       </header>  
