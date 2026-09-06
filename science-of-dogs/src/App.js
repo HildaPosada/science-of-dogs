@@ -51,7 +51,7 @@ const App = () => {
               Welcome to <span className="text-red-200">Science of Dogs</span>
             </h1>
             <p className="text-base text-red-300 max-w-2xl mx-auto md:text-lg">
-              Rewiring dogs and their humans.
+              where Canine Neuroscience meets mapping & rewiring neural pathways for dogs and their humans
             </p>
           </div>
         </section>
