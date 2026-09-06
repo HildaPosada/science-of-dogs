@@ -52,14 +52,6 @@ const App = () => {
             <p className="text-lg text-red-300 max-w-2xl mx-auto mb-6">
               Rewiring dogs and their humans.
             </p>
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfH9e3cd6P6PmE4kmPADj8AuLyEtWH3vmYQ7tJGrA6P-CSiwQ/viewform"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn bg-red-600 hover:bg-red-700 text-white px-6 py-3 text-xl font-bold text-center"
-            >
-              Book Now
-            </a>
           </div>
         </section>
 
