@@ -9,7 +9,7 @@
 /* Slim Borders for Images */
 .image-container {
   background-color: black; /* Black background for the container */
-  padding: 0; /* Slim border effect */
+  padding: 2px; /* Slim border effect */
   display: inline-block;
   box-sizing: border-box;
 }
