@@ -1,9 +1,9 @@
 /* Slim Borders for Background Sections */
 .bordered-section {
-  border: 0 solid black; /* Slim black border */
-  padding: 0; /* Consistent slim padding */
+  border: 2px solid black; /* Slim black border */
+  padding: 2px; /* Consistent slim padding */
   box-sizing: border-box; /* Ensure padding doesn't affect the layout */
-  margin:  0; /* Space between sections */
+  margin: 8px 0; /* Space between sections */
 }
 
 /* Slim Borders for Images */
