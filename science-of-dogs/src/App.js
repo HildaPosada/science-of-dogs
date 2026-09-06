@@ -101,7 +101,7 @@ const App = () => {
       {/* Footer */}
       <footer className="bg-black-translucent backdrop-blur-md text-center py-8">
         <p className="text-lg font-semibold">
-          © 2024 Science of Dogs<sup className="text-xs">TM</sup>. All rights reserved.
+          © 2027 Science of Dogs<sup className="text-xs">TM</sup>. All rights reserved.
         </p>
       </footer>
     </div>
