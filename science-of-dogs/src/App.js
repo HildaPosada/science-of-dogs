@@ -67,7 +67,7 @@ const App = () => {
         <section
           id="about"
           className="h-screen flex flex-col items-center justify-center bg-cover bg-center bordered-section"
-          style={{ backgroundImage: "url('/background-about.png')" }}
+          style={{ backgroundImage: "url('/background-about.png')", backgroundPosition: "center 36%" }}
         >
           <h2 className="text-4xl font-bold text-center mb-6">About Us</h2>
           <p className="text-center text-lg text-red-300 max-w-3xl mx-auto">
@@ -89,7 +89,7 @@ const App = () => {
         <section
           id="philosophy"
           className="h-screen flex flex-col items-center justify-center bg-cover bg-center bordered-section"
-          style={{ backgroundImage: "url('/background-philosophy.png')" }}
+          style={{ backgroundImage: "url('/background-philosophy.png')", backgroundPosition: "center 36%" }}
         >
           <h2 className="text-4xl font-bold text-center mb-6">Philosophy</h2>
           <p className="text-center text-lg text-red-300 max-w-3xl mx-auto">
