@@ -10,11 +10,11 @@ const App = () => {
       
       {/* Header */}
       <header className="flex justify-between items-center px-4 py-3 md:px-6 md:py-4 bg-red-translucent fixed w-full z-10 backdrop-blur-md">
-        <div className="flex items-center">
+        <a href="#home" className="flex items-center" aria-label="Go to Science of Dogs home">
           {/* Logo */}
           <img src="/logo.png" alt="Science of Dogs Logo" className="h-10 w-10 mr-2 rounded-full md:h-12 md:w-12" />
           <h1 className="text-2xl font-extrabold md:text-3xl">Science of Dogs</h1>
-        </div>
+        </a>
         {/* Responsive Navigation */}
         <div className="md:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-white">
@@ -42,6 +42,7 @@ const App = () => {
       <main className="flex-grow pt-16 md:pt-20">
         {/* Section 1: Hero and Booking with Borders */}
         <section
+          id="home"
           className="min-h-screen flex flex-col items-center justify-center bg-cover px-5 py-24 md:h-screen md:px-8 md:py-0 bordered-section"
           style={{ backgroundImage: "url('/background-hero-booking.png')", backgroundPosition: "center 36%" }}
         >
