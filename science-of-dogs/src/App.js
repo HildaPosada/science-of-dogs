@@ -89,6 +89,34 @@ const App = () => {
             The philosophy of positive dog training is deeply rooted in the science of reinforcement, balancing positive and negative reinforcement to help dogs navigate the complexities of a human-centered world. Positive reinforcement rewards desired behaviors with treats, praise, or play, encouraging repetition and fostering trust. Negative reinforcement, when used appropriately, gently removes discomfort or pressure when a dog responds correctly, reinforcing learning without fear. This approach emphasizes guiding dogs to distinguish between appropriate and inappropriate behaviors, ensuring they can adapt and thrive in human environments.
           </p>
         </section>
+
+        {/* Section 4: Research */}
+        <section
+          id="research"
+          className="min-h-screen flex flex-col items-center justify-center bg-black px-5 py-24 md:px-8"
+        >
+          <div className="max-w-4xl text-center">
+            <h2 className="text-3xl font-bold mb-5 md:text-4xl md:mb-6">Research</h2>
+            <p className="text-base leading-relaxed text-red-300 md:text-lg">
+              Science-informed resources for understanding behavior, learning, and wellbeing.
+            </p>
+            <div className="mt-10 grid gap-6 text-left sm:grid-cols-2 md:grid-cols-3">
+              <div>
+                <h3 className="text-xl font-bold text-red-200">Stress and Cortisol</h3>
+                <p className="mt-2 text-base leading-relaxed text-red-300">How stress affects a dog&apos;s body, behavior, and capacity to learn.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-red-200">Training Methods</h3>
+                <p className="mt-2 text-base leading-relaxed text-red-300">Research on aversive methods, reinforcement, and humane learning.</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-red-200">Behavior</h3>
+                <p className="mt-2 text-base leading-relaxed text-red-300">Clearer ways to understand aggression, fear, reactivity, and normal dog behavior.</p>
+              </div>
+            </div>
+          </div>
+          {/* Future Case Studies application: https://docs.google.com/forms/d/e/1FAIpQLSfH9e3cd6P6PmE4kmPADj8AuLyEtWH3vmYQ7tJGrA6P-CSiwQ/viewform */}
+        </section>
       </main>
 
       {/* Footer */}
