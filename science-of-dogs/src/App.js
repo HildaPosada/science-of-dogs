@@ -42,8 +42,8 @@ const App = () => {
       <main className="flex-grow pt-16">
         {/* Section 1: Hero and Booking with Borders */}
         <section
-          className="h-screen flex flex-col items-center justify-center bg-cover bg-center bordered-section"
-          style={{ backgroundImage: "url('/background-hero-booking.png')" }}
+          className="h-screen flex flex-col items-center justify-center bg-cover bordered-section"
+          style={{ backgroundImage: "url('/background-hero-booking.png')", backgroundPosition: "center 60%" }}
         >
           <div className="text-center">
             <h1 className="text-5xl font-extrabold tracking-wide mb-4">
