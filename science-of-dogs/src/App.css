@@ -11,12 +11,12 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: var(--header-height); }
-body { overflow-x: hidden; }
+body { overflow-x: clip; }
 a { color: inherit; }
 
 .site-shell {
   min-height: 100vh;
-  overflow: hidden;
+  overflow: clip;
   background: var(--ink);
   color: var(--paper);
 }
