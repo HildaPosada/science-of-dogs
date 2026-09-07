@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import { FaArrowRight, FaBars, FaInstagram, FaTimes } from 'react-icons/fa';
 
@@ -103,13 +103,7 @@ const pathwayStages = [
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activePathway, setActivePathway] = useState(0);
-  const [researchFilter, setResearchFilter] = useState('All');
   const closeMenu = () => setIsMenuOpen(false);
-  const researchFilters = ['All', ...new Set(researchTopics.map((topic) => topic.category))];
-  const visibleResearch = useMemo(
-    () => researchFilter === 'All' ? researchTopics : researchTopics.filter((topic) => topic.category === researchFilter),
-    [researchFilter],
-  );
 
   const navigateToMethod = (event) => {
     event.preventDefault();
@@ -273,30 +267,12 @@ const App = () => {
             <figcaption>A conceptual illustration of sensory, emotional, and evaluative processing. The complete neural system is more complex.</figcaption>
           </figure>
 
-          <div className="research-toolbar" data-reveal>
-            <div>
-              <p className="eyebrow">Research library</p>
-              <h3>Start with the question.</h3>
-            </div>
-            <div className="filter-list" aria-label="Filter research by topic">
-              {researchFilters.map((filter) => (
-                <button type="button" className={researchFilter === filter ? 'is-active' : ''} onClick={() => setResearchFilter(filter)} key={filter} aria-pressed={researchFilter === filter}>
-                  {filter}
-                </button>
-              ))}
-            </div>
-          </div>
-
           <div className="research-grid" data-reveal>
-            {visibleResearch.map((topic) => (
+            {researchTopics.map((topic, index) => (
               <article className="research-card" key={topic.title}>
-                <span className="research-number">{topic.category}</span>
+                <span className="research-number">{String(index + 1).padStart(2, '0')}</span>
                 <h3>{topic.title}</h3>
                 <p>{topic.description}</p>
-                <details>
-                  <summary>What this means for your dog</summary>
-                  <p>{topic.meaning}</p>
-                </details>
                 <a href={topic.href} target="_blank" rel="noopener noreferrer">
                   {topic.label} <span aria-hidden="true">↗</span>
                 </a>

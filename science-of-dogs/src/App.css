@@ -322,16 +322,10 @@ h1, h2, h3, .footer-brand { font-family: Georgia, 'Times New Roman', serif; }
 .research-figure img { display: block; width: 100%; border: 1px solid rgba(242, 229, 214, 0.2); }
 .research-figure figcaption { margin-top: 12px; color: #aa9487; font-size: 0.78rem; letter-spacing: 0.04em; }
 
-.research-toolbar { display: flex; max-width: 1180px; align-items: end; justify-content: space-between; gap: 30px; margin: clamp(58px, 8vw, 94px) auto 0; }
-.research-toolbar h3 { font-size: clamp(2rem, 4vw, 4rem); }
-.filter-list { display: flex; max-width: 610px; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
-.filter-list button { padding: 9px 14px; border: 1px solid var(--line); border-radius: 100px; background: transparent; color: var(--paper-muted); font: inherit; font-size: 0.72rem; cursor: pointer; }
-.filter-list button:hover, .filter-list button.is-active { border-color: var(--coral); background: var(--coral); color: var(--ink); }
-
 .research-grid {
   display: grid;
   max-width: 1180px;
-  margin: 30px auto 0;
+  margin: clamp(58px, 8vw, 94px) auto 0;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   border-top: 1px solid var(--line);
   border-left: 1px solid var(--line);
@@ -349,9 +343,6 @@ h1, h2, h3, .footer-brand { font-family: Georgia, 'Times New Roman', serif; }
 
 .research-card:hover { background: rgba(115, 27, 29, 0.2); }
 .research-card h3 { margin-top: 24px; }
-.research-card details { margin-top: 22px; border-top: 1px solid var(--line); }
-.research-card summary { padding: 18px 0 8px; color: var(--paper); font-size: 0.8rem; font-weight: 700; cursor: pointer; }
-.research-card details p { margin-top: 6px; font-size: 0.9rem; }
 
 .research-card a {
   display: inline-flex;
@@ -412,8 +403,6 @@ h1, h2, h3, .footer-brand { font-family: Georgia, 'Times New Roman', serif; }
   .research-card { min-height: 240px; }
   .pathway-experience, .case-study-section { grid-template-columns: 1fr; }
   .pathway-copy { border-right: 0; border-bottom: 1px solid var(--line); }
-  .research-toolbar { align-items: flex-start; flex-direction: column; }
-  .filter-list { justify-content: flex-start; }
   .case-study-visual { min-height: 58svh; }
   .case-study-visual::after { background: linear-gradient(180deg, transparent 65%, #0b0b0a 100%); }
 }
