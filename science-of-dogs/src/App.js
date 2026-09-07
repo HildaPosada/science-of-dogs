@@ -111,6 +111,15 @@ const App = () => {
     [researchFilter],
   );
 
+  const navigateToMethod = (event) => {
+    event.preventDefault();
+    closeMenu();
+    window.history.replaceState(null, '', '#philosophy');
+    requestAnimationFrame(() => {
+      document.querySelector('.method-content')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  };
+
   useEffect(() => {
     const sections = document.querySelectorAll('[data-reveal]');
     if (!('IntersectionObserver' in window)) {
@@ -148,7 +157,7 @@ const App = () => {
 
         <nav id="site-navigation" className={`site-nav ${isMenuOpen ? 'is-open' : ''}`} aria-label="Primary navigation">
           <a href="#about" onClick={closeMenu}>About</a>
-          <a href="#philosophy" onClick={closeMenu}>Method</a>
+          <a href="#philosophy" onClick={navigateToMethod}>Philosophy</a>
           <a href="#research" onClick={closeMenu}>Research</a>
         </nav>
       </header>
@@ -162,7 +171,7 @@ const App = () => {
               Mapping and rewiring neural pathways for dogs and the humans who care for them.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#philosophy">Explore the method <FaArrowRight aria-hidden="true" /></a>
+              <a className="button button-primary" href="#philosophy" onClick={navigateToMethod}>Explore the philosophy <FaArrowRight aria-hidden="true" /></a>
               <a className="button button-secondary" href="#research">View the research</a>
             </div>
           </div>
@@ -192,28 +201,30 @@ const App = () => {
         </section>
 
         <section id="philosophy" className="scene scene-method" style={{ backgroundImage: "url('/background-philosophy.png')" }}>
-          <div className="section-intro" data-reveal>
-            <p className="eyebrow">The A–B–C method</p>
-            <h2>We extract the pain<br />so they can blossom.</h2>
-            <p>
-              A planned sequence of real-life scenarios reveals how a dog responds—one controlled step at a time, without overwhelming the nervous system.
-            </p>
-          </div>
+          <div className="method-content">
+            <div className="section-intro" data-reveal>
+              <p className="eyebrow">The A–B–C method</p>
+              <h2>We extract the pain<br />so they can blossom.</h2>
+              <p>
+                A planned sequence of real-life scenarios reveals how a dog responds—one controlled step at a time, without overwhelming the nervous system.
+              </p>
+            </div>
 
-          <ol className="method-grid" aria-label="Three stages of the A-B-C method" data-reveal>
-            {methodSteps.map((step, index) => (
-              <li className="method-step" key={step.id}>
-                <div className="method-card">
-                  <span className="step-number">0{index + 1}</span>
-                  <span className="step-label">Step {step.id}</span>
-                  <img src={step.image} alt={step.alt} />
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-                </div>
-                {index < methodSteps.length - 1 && <FaArrowRight className="method-arrow" aria-hidden="true" />}
-              </li>
-            ))}
-          </ol>
+            <ol className="method-grid" aria-label="Three phases of the A-B-C method" data-reveal>
+              {methodSteps.map((step, index) => (
+                <li className="method-step" key={step.id}>
+                  <div className="method-card">
+                    <span className="step-number">0{index + 1}</span>
+                    <span className="step-label">Phase {step.id}</span>
+                    <img src={step.image} alt={step.alt} />
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </div>
+                  {index < methodSteps.length - 1 && <FaArrowRight className="method-arrow" aria-hidden="true" />}
+                </li>
+              ))}
+            </ol>
+          </div>
         </section>
 
         <section id="research" className="research-section">
