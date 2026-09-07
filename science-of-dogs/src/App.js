@@ -29,6 +29,7 @@ const methodSteps = [
 const researchTopics = [
   {
     title: 'Cortisol',
+    image: '/background-case-study-editorial.webp',
     category: 'Stress',
     description: 'A noninvasive measure commonly used in studies of canine stress.',
     meaning: 'Stress chemistry can change attention, recovery, and how available a dog is for learning.',
@@ -37,6 +38,7 @@ const researchTopics = [
   },
   {
     title: 'Aversive Training',
+    image: '/research-training.webp',
     category: 'Learning',
     description: 'Comparative welfare research examines the effects of training methods.',
     meaning: 'How we teach can affect both immediate behavior and the dog’s emotional welfare.',
@@ -45,6 +47,7 @@ const researchTopics = [
   },
   {
     title: 'Aggression and Reactivity',
+    image: '/research-reactivity.webp',
     category: 'Behavior',
     description: 'Behavior science considers context, communication, and individual history.',
     meaning: 'A visible reaction is information about the dog’s state—not a complete description of the dog.',
@@ -53,6 +56,7 @@ const researchTopics = [
   },
   {
     title: 'Normal Dog Behavior',
+    image: '/background-philosophy-editorial.webp',
     category: 'Behavior',
     description: 'Understanding typical canine behavior helps frame humane support and training.',
     meaning: 'Recognizing species-typical behavior helps separate a problem from a normal canine need.',
@@ -61,6 +65,7 @@ const researchTopics = [
   },
   {
     title: 'Longevity',
+    image: '/research-longevity.webp',
     category: 'Health',
     description: 'Long-term research explores the factors that shape healthy canine aging.',
     meaning: 'Genetics, environment, relationships, and daily care all contribute to how dogs age.',
@@ -69,6 +74,7 @@ const researchTopics = [
   },
   {
     title: 'Air Quality',
+    image: '/background-about-editorial.webp',
     category: 'Environment',
     description: 'Environmental-health research considers how air pollution affects companion animals.',
     meaning: 'The spaces dogs share with us can influence respiratory health and long-term wellbeing.',
@@ -100,6 +106,15 @@ const pathwayStages = [
   },
 ];
 
+const pathwayScenes = [
+  ...pathwayStages,
+  {
+    name: 'The whole response',
+    short: 'Understand',
+    description: 'Behavior is the visible outcome of a nervous system responding to biology, experience, and the present environment.',
+  },
+];
+
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activePathway, setActivePathway] = useState(0);
@@ -125,6 +140,19 @@ const App = () => {
       { threshold: 0.14 },
     );
     sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const scenes = document.querySelectorAll('[data-pathway-scene]');
+    if (!('IntersectionObserver' in window)) return undefined;
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => {
+        if (entry.isIntersecting) setActivePathway(Number(entry.target.dataset.pathwayScene));
+      }),
+      { rootMargin: '-42% 0px -42% 0px', threshold: 0 },
+    );
+    scenes.forEach((scene) => observer.observe(scene));
     return () => observer.disconnect();
   }, []);
 
@@ -172,7 +200,7 @@ const App = () => {
           <span className="scroll-cue" aria-hidden="true">Scroll to explore</span>
         </section>
 
-        <section id="about" className="scene scene-about" style={{ backgroundImage: "url('/background-about.png')" }}>
+        <section id="about" className="scene scene-about" style={{ backgroundImage: "url('/background-about-editorial.webp')" }}>
           <div className="content-panel" data-reveal>
             <p className="eyebrow">The practice</p>
             <h2>Science made humane.</h2>
@@ -194,7 +222,7 @@ const App = () => {
           </div>
         </section>
 
-        <section id="philosophy" className="scene scene-method" style={{ backgroundImage: "url('/background-philosophy.png')" }}>
+        <section id="philosophy" className="scene scene-method" style={{ backgroundImage: "url('/background-philosophy-editorial.webp')" }}>
           <div className="method-content">
             <div className="section-intro" data-reveal>
               <p className="eyebrow">The A–B–C method</p>
@@ -228,48 +256,30 @@ const App = () => {
             <p>Science-informed resources for understanding canine behavior, learning, stress, and wellbeing.</p>
           </div>
 
-          <section className="pathway-experience" aria-labelledby="pathway-title" data-reveal>
-            <div className="pathway-copy">
-              <p className="eyebrow">From stimulus to response</p>
-              <h3 id="pathway-title">Behavior begins inside the nervous system.</h3>
-              <p>Select each stage to follow one simplified route through the canine brain.</p>
+          <section className={`cinematic-pathway pathway-scene-${activePathway}`} aria-labelledby="pathway-title">
+            <div className="pathway-sticky">
+              <figure className="pathway-visual">
+                <img src="/Ilustration-research.png" alt="Conceptual canine neural pathway from sensory input through the thalamus and amygdala to the prefrontal cortex" />
+              </figure>
+              <div className="pathway-story" aria-live="polite">
+                <p className="eyebrow">{pathwayScenes[activePathway].short} · {String(activePathway + 1).padStart(2, '0')}</p>
+                <h3 id="pathway-title">{pathwayScenes[activePathway].name}</h3>
+                <p>{pathwayScenes[activePathway].description}</p>
+                <div className="pathway-progress" aria-label={`Pathway scene ${activePathway + 1} of ${pathwayScenes.length}`}>
+                  {pathwayScenes.map((scene, index) => <span className={index <= activePathway ? 'is-active' : ''} key={scene.name} />)}
+                </div>
+              </div>
+              {activePathway === pathwayScenes.length - 1 && <p className="pathway-final">Behavior is a nervous-system response—not a character flaw.</p>}
             </div>
-            <div className="pathway-panel">
-              <div className="pathway-steps" role="tablist" aria-label="Canine neural pathway">
-                {pathwayStages.map((stage, index) => (
-                  <React.Fragment key={stage.name}>
-                    <button
-                      type="button"
-                      role="tab"
-                      aria-selected={activePathway === index}
-                      aria-controls="pathway-explanation"
-                      className={`pathway-step ${activePathway === index ? 'is-active' : ''}`}
-                      onClick={() => setActivePathway(index)}
-                    >
-                      <span>{String(index + 1).padStart(2, '0')}</span>
-                      <strong>{stage.name}</strong>
-                      <small>{stage.short}</small>
-                    </button>
-                    {index < pathwayStages.length - 1 && <span className="pathway-line" aria-hidden="true">→</span>}
-                  </React.Fragment>
-                ))}
-              </div>
-              <div id="pathway-explanation" className="pathway-explanation" role="tabpanel" aria-live="polite">
-                <span>{pathwayStages[activePathway].short}</span>
-                <p>{pathwayStages[activePathway].description}</p>
-              </div>
-              <p className="pathway-takeaway">Behavior is a nervous-system response—not a character flaw.</p>
+            <div className="pathway-scroll-track" aria-hidden="true">
+              {pathwayScenes.map((scene, index) => <div data-pathway-scene={index} key={scene.name} />)}
             </div>
           </section>
-
-          <figure className="research-figure" data-reveal>
-            <img src="/Ilustration-research.png" alt="Canine neural pathway from sensory input through the thalamus and amygdala to the prefrontal cortex" />
-            <figcaption>A conceptual illustration of sensory, emotional, and evaluative processing. The complete neural system is more complex.</figcaption>
-          </figure>
+          <p className="pathway-disclaimer">A simplified conceptual pathway for education. The complete neural system is more complex.</p>
 
           <div className="research-grid" data-reveal>
             {researchTopics.map((topic, index) => (
-              <article className="research-card" key={topic.title}>
+              <article className="research-card" style={{ '--card-image': `url(${topic.image})` }} key={topic.title}>
                 <span className="research-number">{String(index + 1).padStart(2, '0')}</span>
                 <h3>{topic.title}</h3>
                 <p>{topic.description}</p>
@@ -284,7 +294,7 @@ const App = () => {
         </section>
 
         <section className="case-study-section" aria-labelledby="case-study-title">
-          <div className="case-study-visual" style={{ backgroundImage: "url('/background-philosophy.png')" }} role="img" aria-label="Dog and human relationship represented against the existing philosophy artwork" />
+          <div className="case-study-visual" style={{ backgroundImage: "url('/background-case-study-editorial.webp')" }} role="img" aria-label="Two dogs positioned around a sculptural dandelion" />
           <div className="case-study-copy" data-reveal>
             <p className="eyebrow">Case study · coming soon</p>
             <h2 id="case-study-title">Thirteen bites were not the whole story.</h2>
