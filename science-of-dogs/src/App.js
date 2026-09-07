@@ -85,9 +85,18 @@ const App = () => {
           style={{ backgroundImage: "url('/background-philosophy.png')", backgroundPosition: "center 36%" }}
         >
           <h2 className="text-3xl font-bold text-center mb-5 md:text-4xl md:mb-6">Philosophy</h2>
-          <p className="text-center text-base leading-relaxed text-red-300 max-w-3xl mx-auto md:text-lg">
-            The philosophy of positive dog training is deeply rooted in the science of reinforcement, balancing positive and negative reinforcement to help dogs navigate the complexities of a human-centered world. Positive reinforcement rewards desired behaviors with treats, praise, or play, encouraging repetition and fostering trust. Negative reinforcement, when used appropriately, gently removes discomfort or pressure when a dog responds correctly, reinforcing learning without fear. This approach emphasizes guiding dogs to distinguish between appropriate and inappropriate behaviors, ensuring they can adapt and thrive in human environments.
-          </p>
+          <p className="text-center text-xl font-bold text-red-200 md:text-2xl">We extract the pain so they can blossom.</p>
+          <div className="mt-10 grid w-full max-w-4xl gap-5 text-left md:grid-cols-3">
+            <article className="border border-red-500 p-5 text-center">
+              <p className="text-5xl font-bold text-red-200">A</p>
+            </article>
+            <article className="border border-red-500 p-5 text-center">
+              <p className="text-5xl font-bold text-red-200">B</p>
+            </article>
+            <article className="border border-red-500 p-5 text-center">
+              <p className="text-5xl font-bold text-red-200">C</p>
+            </article>
+          </div>
         </section>
 
         {/* Section 4: Research */}
