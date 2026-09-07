@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { FaBars, FaTimes, FaInstagram } from 'react-icons/fa'; // Consolidated imports
+import { FaBars, FaTimes, FaInstagram, FaUsers, FaWalking, FaPaw } from 'react-icons/fa'; // Consolidated imports
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -86,15 +86,26 @@ const App = () => {
         >
           <h2 className="text-3xl font-bold text-center mb-5 md:text-4xl md:mb-6">Philosophy</h2>
           <p className="text-center text-xl font-bold text-red-200 md:text-2xl">We extract the pain so they can blossom.</p>
-          <div className="mt-10 grid w-full max-w-4xl gap-5 text-left md:grid-cols-3">
-            <article className="border border-red-500 p-5 text-center">
-              <p className="text-5xl font-bold text-red-200">A</p>
+          <p className="mt-5 max-w-3xl text-center text-base leading-relaxed text-red-300 md:text-lg">
+            The A-B-C method walks a dog through a planned sequence of real-life scenarios with its own family, one controlled step at a time. Each step introduces a specific situation, so Kim can see exactly how the dog responds before moving to the next. This steady, repeatable process builds trust gradually instead of overwhelming the dog all at once.
+          </p>
+          <div className="mt-10 flex w-full max-w-4xl flex-col items-center gap-4 md:flex-row md:items-stretch md:justify-center">
+            <article className="flex w-full max-w-xs flex-col items-center border-2 border-black bg-white p-5 text-center text-black md:w-56">
+              <p className="text-xs font-bold uppercase tracking-wide">Step A</p>
+              <FaUsers className="my-3 text-4xl" />
+              <p className="text-sm font-semibold leading-snug">A family member stays near the dog</p>
             </article>
-            <article className="border border-red-500 p-5 text-center">
-              <p className="text-5xl font-bold text-red-200">B</p>
+            <p className="text-3xl font-bold text-red-500 md:self-center" aria-hidden="true">&rarr;</p>
+            <article className="flex w-full max-w-xs flex-col items-center border-2 border-black bg-white p-5 text-center text-black md:w-56">
+              <p className="text-xs font-bold uppercase tracking-wide">Step B</p>
+              <FaWalking className="my-3 text-4xl" />
+              <p className="text-sm font-semibold leading-snug">A family member repeats a specific task with the dog</p>
             </article>
-            <article className="border border-red-500 p-5 text-center">
-              <p className="text-5xl font-bold text-red-200">C</p>
+            <p className="text-3xl font-bold text-red-500 md:self-center" aria-hidden="true">&rarr;</p>
+            <article className="flex w-full max-w-xs flex-col items-center border-2 border-black bg-white p-5 text-center text-black md:w-56">
+              <p className="text-xs font-bold uppercase tracking-wide">Step C</p>
+              <FaPaw className="my-3 text-4xl" />
+              <p className="text-sm font-semibold leading-snug">The dog is observed across the full combined scenario</p>
             </article>
           </div>
         </section>
@@ -110,7 +121,7 @@ const App = () => {
               Science-informed resources for understanding behavior, learning, and wellbeing.
             </p>
             <img
-              src="/Reaserach illustration.png"
+              src="/Ilustration-research.png"
               alt="Canine neural pathway from sensory input through the thalamus and amygdala to the prefrontal cortex"
               className="mx-auto mt-8 w-full max-w-3xl"
             />
