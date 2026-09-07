@@ -51,7 +51,7 @@ const App = () => {
               Welcome to <span className="text-red-200">Science of Dogs</span>
             </h1>
             <p className="text-base text-red-300 max-w-2xl mx-auto md:text-lg">
-              where Canine Neuroscience meets mapping & rewiring neural pathways for dogs and their humans
+            Canine Neuroscience meets mapping & rewiring of neural pathways for dogs and their humans
             </p>
           </div>
         </section>
@@ -100,21 +100,54 @@ const App = () => {
             <p className="text-base leading-relaxed text-red-300 md:text-lg">
               Science-informed resources for understanding behavior, learning, and wellbeing.
             </p>
-            <div className="mt-10 grid gap-6 text-left sm:grid-cols-2 md:grid-cols-3">
-              <div>
-                <h3 className="text-xl font-bold text-red-200">Stress and Cortisol</h3>
-                <p className="mt-2 text-base leading-relaxed text-red-300">How stress affects a dog&apos;s body, behavior, and capacity to learn.</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-red-200">Training Methods</h3>
-                <p className="mt-2 text-base leading-relaxed text-red-300">Research on aversive methods, reinforcement, and humane learning.</p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-red-200">Behavior</h3>
-                <p className="mt-2 text-base leading-relaxed text-red-300">Clearer ways to understand aggression, fear, reactivity, and normal dog behavior.</p>
+            <img
+              src="/Reaserach illustration.png"
+              alt="Canine neural pathway from sensory input through the thalamus and amygdala to the prefrontal cortex"
+              className="mx-auto mt-8 w-full max-w-3xl"
+            />
+            <div className="mt-10 overflow-x-auto pb-4">
+              <div className="flex min-w-max gap-6 text-left">
+                <article className="w-56 border-t-2 border-red-500 pt-4">
+                  <p className="text-sm font-bold text-red-200">01</p>
+                  <h3 className="mt-2 text-xl font-bold">Cortisol</h3>
+                  <p className="mt-2 text-base leading-relaxed text-red-300">A noninvasive measure commonly used in studies of canine stress.</p>
+                  <a href="https://pubmed.ncbi.nlm.nih.gov/?term=dog+salivary+cortisol+stress" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-red-200 hover:underline">Explore studies</a>
+                </article>
+                <article className="w-56 border-t-2 border-red-500 pt-4">
+                  <p className="text-sm font-bold text-red-200">02</p>
+                  <h3 className="mt-2 text-xl font-bold">Aversive Training</h3>
+                  <p className="mt-2 text-base leading-relaxed text-red-300">Comparative welfare research examines the effects of training methods.</p>
+                  <a href="https://doi.org/10.1371/journal.pone.0225023" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-red-200 hover:underline">Read the study</a>
+                </article>
+                <article className="w-56 border-t-2 border-red-500 pt-4">
+                  <p className="text-sm font-bold text-red-200">03</p>
+                  <h3 className="mt-2 text-xl font-bold">Aggression and Reactivity</h3>
+                  <p className="mt-2 text-base leading-relaxed text-red-300">Behavior science considers context, communication, and individual history.</p>
+                  <a href="https://pubmed.ncbi.nlm.nih.gov/?term=dog+aggression+reactivity+behavior" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-red-200 hover:underline">Explore studies</a>
+                </article>
+                <article className="w-56 border-t-2 border-red-500 pt-4">
+                  <p className="text-sm font-bold text-red-200">04</p>
+                  <h3 className="mt-2 text-xl font-bold">Normal Dog Behavior</h3>
+                  <p className="mt-2 text-base leading-relaxed text-red-300">Understanding normal canine behavior helps frame support and training.</p>
+                  <a href="https://avsab.org/resources/position-statements/" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-red-200 hover:underline">Read AVSAB resources</a>
+                </article>
+                <article className="w-56 border-t-2 border-red-500 pt-4">
+                  <p className="text-sm font-bold text-red-200">05</p>
+                  <h3 className="mt-2 text-xl font-bold">Longevity</h3>
+                  <p className="mt-2 text-base leading-relaxed text-red-300">Long-term research explores the factors that shape healthy canine aging.</p>
+                  <a href="https://dogagingproject.org/" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-red-200 hover:underline">Visit the Dog Aging Project</a>
+                </article>
+                <article className="w-56 border-t-2 border-red-500 pt-4">
+                  <p className="text-sm font-bold text-red-200">06</p>
+                  <h3 className="mt-2 text-xl font-bold">Air Quality</h3>
+                  <p className="mt-2 text-base leading-relaxed text-red-300">Environmental-health research considers how air pollution affects companion animals.</p>
+                  <a href="https://pubmed.ncbi.nlm.nih.gov/?term=dog+air+pollution+health" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-red-200 hover:underline">Explore studies</a>
+                </article>
               </div>
             </div>
+            <p className="mt-4 text-sm leading-relaxed text-red-300">Sources are provided for further reading and should be reviewed before any clinical or training decision.</p>
           </div>
+          {/* Do not use the AKC logo without written permission or verified brand-use terms. */}
           {/* Future Case Studies application: https://docs.google.com/forms/d/e/1FAIpQLSfH9e3cd6P6PmE4kmPADj8AuLyEtWH3vmYQ7tJGrA6P-CSiwQ/viewform */}
         </section>
       </main>
