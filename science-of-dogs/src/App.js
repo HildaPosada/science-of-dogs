@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { FaBars, FaTimes, FaInstagram, FaUsers, FaWalking, FaPaw } from 'react-icons/fa'; // Consolidated imports
+import { FaBars, FaTimes, FaInstagram } from 'react-icons/fa'; // Consolidated imports
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -92,19 +92,19 @@ const App = () => {
           <div className="mt-10 flex w-full max-w-4xl flex-col items-center gap-4 md:flex-row md:items-stretch md:justify-center">
             <article className="flex w-full max-w-xs flex-col items-center border-2 border-black bg-white p-5 text-center text-black md:w-56">
               <p className="text-xs font-bold uppercase tracking-wide">Step A</p>
-              <FaUsers className="my-3 text-4xl" />
+              <img src="/A-Person calmly standing near a seated dog.png" alt="A person calmly standing near a seated dog" className="my-3 h-16 w-16 object-contain" />
               <p className="text-sm font-semibold leading-snug">A family member stays near the dog</p>
             </article>
             <p className="text-3xl font-bold text-red-500 md:self-center" aria-hidden="true">&rarr;</p>
             <article className="flex w-full max-w-xs flex-col items-center border-2 border-black bg-white p-5 text-center text-black md:w-56">
               <p className="text-xs font-bold uppercase tracking-wide">Step B</p>
-              <FaWalking className="my-3 text-4xl" />
+              <img src="/B-Hand repeatedly attaching a leash clip to the collar.png" alt="Hand repeatedly attaching a leash clip to the collar" className="my-3 h-16 w-16 object-contain" />
               <p className="text-sm font-semibold leading-snug">A family member repeats a specific task with the dog</p>
             </article>
             <p className="text-3xl font-bold text-red-500 md:self-center" aria-hidden="true">&rarr;</p>
             <article className="flex w-full max-w-xs flex-col items-center border-2 border-black bg-white p-5 text-center text-black md:w-56">
               <p className="text-xs font-bold uppercase tracking-wide">Step C</p>
-              <FaPaw className="my-3 text-4xl" />
+              <img src="/C-Three people observing a calm dog.png" alt="Three people observing a calm dog" className="my-3 h-16 w-16 object-contain" />
               <p className="text-sm font-semibold leading-snug">The dog is observed across the full combined scenario</p>
             </article>
           </div>
