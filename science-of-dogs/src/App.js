@@ -215,7 +215,7 @@ const App = () => {
             <p className="eyebrow">The practice</p>
             <h2>Science made humane.</h2>
             <p>
-              Led by Kim, Science of Dogs combines canine neuroscience, psychology, and careful observation to understand behavior at its source, instead of simply suppressing its symptoms.
+              Led by Kim, whose work focuses on canine reactivity and aggression, Science of Dogs combines canine neuroscience, psychology, and careful observation to understand behavior at its source, instead of simply suppressing its symptoms.
             </p>
             <p>
               Families learn through controlled, hands-on experiences designed to build trust and create lasting change for both dog and human.
@@ -285,7 +285,12 @@ const App = () => {
             ))}
           </div>
 
-          <p className="source-note">Sources are provided for further reading and should be reviewed before any clinical or training decision.</p>
+          <div className="research-notes">
+            <p>Research is reviewed for relevance, study design, welfare implications, and practical limitations.</p>
+            <p>Sources are provided for further reading and should be reviewed before any clinical or training decision.</p>
+          </div>
+
+          <p className="pathway-cue" aria-hidden="true">Scroll to follow the response <span>↓</span></p>
 
           <section className={`cinematic-pathway pathway-scene-${activePathway}`} aria-labelledby="pathway-title">
             <div className="pathway-sticky">
@@ -293,11 +298,20 @@ const App = () => {
                 <img src="/illustration-research.webp" alt="Conceptual canine neural pathway from sensory input through the thalamus and amygdala to the prefrontal cortex" />
               </figure>
               <div className="pathway-story" aria-live="polite">
-                <p className="eyebrow">{pathwayScenes[activePathway].short} · {String(activePathway + 1).padStart(2, '0')}</p>
+                <p className="eyebrow">
+                  {activePathway < pathwayStages.length
+                    ? `${pathwayScenes[activePathway].short} · ${String(activePathway + 1).padStart(2, '0')}`
+                    : 'Synthesis'}
+                </p>
                 <h3 id="pathway-title">{pathwayScenes[activePathway].name}</h3>
                 <p>{pathwayScenes[activePathway].description}</p>
-                <div className="pathway-progress" aria-label={`Pathway scene ${activePathway + 1} of ${pathwayScenes.length}`}>
-                  {pathwayScenes.map((scene, index) => <span className={index <= activePathway ? 'is-active' : ''} key={scene.name} />)}
+                <div
+                  className="pathway-progress"
+                  aria-label={activePathway < pathwayStages.length
+                    ? `Pathway stage ${activePathway + 1} of ${pathwayStages.length}`
+                    : `Pathway synthesis after ${pathwayStages.length} stages`}
+                >
+                  {pathwayStages.map((stage, index) => <span className={index <= activePathway ? 'is-active' : ''} key={stage.name} />)}
                 </div>
               </div>
               {activePathway === pathwayScenes.length - 1 && <p className="pathway-final">Behavior is a nervous-system response, not a character flaw.</p>}
@@ -321,6 +335,14 @@ const App = () => {
               <div><dt>Support</dt><dd>Safety, capacity, and repeatable learning</dd></div>
             </dl>
             <p className="case-study-note">The complete case study will be published only after its timeline and outcomes have been documented for responsible review.</p>
+            <a
+              href="https://www.instagram.com/scienceofdogs?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button button-secondary case-study-action"
+            >
+              Follow the case study <FaArrowRight aria-hidden="true" />
+            </a>
           </div>
         </section>
       </main>
