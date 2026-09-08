@@ -150,7 +150,7 @@ const App = () => {
       (entries) => entries.forEach((entry) => {
         if (entry.isIntersecting) setActivePathway(Number(entry.target.dataset.pathwayScene));
       }),
-      { rootMargin: '-42% 0px -42% 0px', threshold: 0 },
+      { rootMargin: '-35% 0px -35% 0px', threshold: 0 },
     );
     scenes.forEach((scene) => observer.observe(scene));
     return () => observer.disconnect();
@@ -259,7 +259,7 @@ const App = () => {
           <section className={`cinematic-pathway pathway-scene-${activePathway}`} aria-labelledby="pathway-title">
             <div className="pathway-sticky">
               <figure className="pathway-visual">
-                <img src="/Ilustration-research.png" alt="Conceptual canine neural pathway from sensory input through the thalamus and amygdala to the prefrontal cortex" />
+                <img src="/illustration-research.webp" alt="Conceptual canine neural pathway from sensory input through the thalamus and amygdala to the prefrontal cortex" />
               </figure>
               <div className="pathway-story" aria-live="polite">
                 <p className="eyebrow">{pathwayScenes[activePathway].short} · {String(activePathway + 1).padStart(2, '0')}</p>
