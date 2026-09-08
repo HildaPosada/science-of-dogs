@@ -130,6 +130,15 @@ const App = () => {
     });
   };
 
+  const navigateToResearch = (event) => {
+    event.preventDefault();
+    closeMenu();
+    window.history.replaceState(null, '', '#research');
+    requestAnimationFrame(() => {
+      document.querySelector('#research')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  };
+
   useEffect(() => {
     const sections = document.querySelectorAll('[data-reveal]');
     if (!('IntersectionObserver' in window)) {
@@ -181,7 +190,7 @@ const App = () => {
         <nav id="site-navigation" className={`site-nav ${isMenuOpen ? 'is-open' : ''}`} aria-label="Primary navigation">
           <a href="#about" onClick={closeMenu}>About</a>
           <a href="#philosophy" onClick={navigateToMethod}>Philosophy</a>
-          <a href="#research" onClick={closeMenu}>Research</a>
+          <a href="#research" onClick={navigateToResearch}>Research</a>
         </nav>
       </header>
 
@@ -195,7 +204,7 @@ const App = () => {
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#philosophy" onClick={navigateToMethod}>Explore the philosophy <FaArrowRight aria-hidden="true" /></a>
-              <a className="button button-secondary" href="#research">View the research</a>
+              <a className="button button-secondary" href="#research" onClick={navigateToResearch}>View the research</a>
             </div>
           </div>
           <span className="scroll-cue" aria-hidden="true">Scroll to explore</span>
@@ -252,7 +261,6 @@ const App = () => {
 
         <section id="research" className="research-section">
           <div className="section-intro research-intro" data-reveal>
-            <p className="eyebrow">Evidence before assumption</p>
             <h2>Research</h2>
             <p>Science-informed resources for understanding canine behavior, learning, stress, and wellbeing.</p>
           </div>
