@@ -295,7 +295,7 @@ h1, h2, h3, .footer-brand { font-family: var(--display-font); font-style: italic
 }
 
 .research-section {
-  padding: clamp(64px, 6vw, 84px) clamp(24px, 7vw, 110px) clamp(110px, 14vw, 180px);
+  padding: clamp(64px, 6vw, 84px) clamp(24px, 7vw, 110px) clamp(52px, 5vw, 72px);
   background: radial-gradient(circle at 75% 16%, rgba(115, 27, 29, 0.25), transparent 30%), var(--ink);
 }
 
@@ -440,7 +440,7 @@ h1, h2, h3, .footer-brand { font-family: var(--display-font); font-style: italic
   .scene-about { min-height: 100svh; align-items: flex-end; background-position: 38% center; background-size: cover; }
   .content-panel { padding: 26px 22px; }
   .scene-method { padding-right: 20px; padding-left: 20px; }
-  .research-section { padding: 72px 20px 100px; }
+  .research-section { padding: 72px 20px 56px; }
   .site-footer { grid-template-columns: 1fr; }
   .cinematic-pathway { width: calc(100% + 40px); margin-right: -20px; margin-left: -20px; }
   .pathway-sticky { min-height: 560px; }
