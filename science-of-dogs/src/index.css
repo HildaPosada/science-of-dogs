@@ -2,98 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Global Styles */
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
 body {
-  font-family: 'Arial', sans-serif;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: black; /* Set site-wide background color */
-  color: white; /* Default text color */
+  background: #0a0909;
+  color: #f2e5d6;
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Slim Borders for Background Sections */
-.bordered-section {
-  border: 2px solid black; /* Slim black border */
-  padding: 2px; /* Consistent slim padding */
-  box-sizing: border-box; /* Ensure padding doesn't affect the layout */
-  margin: 8px 0; /* Space between sections */
-}
-
-/* Slim Borders for Images */
-.image-container {
-  background-color: black; /* Black background for the container */
-  padding: 2px; /* Slim border effect */
-  display: inline-block;
-  box-sizing: border-box;
-}
-
-.image {
-  display: block;
-  width: 100%; /* Responsive image width */
-  box-sizing: border-box; /* Consistent layout with borders */
-}
-
-/* Translucent Header */
-.header-translucent {
-  background-color: rgba(220, 38, 38, 0.5); /* Red translucent */
-  backdrop-filter: blur(8px); /* Optional blur for effect */
-}
-
-/* Translucent Footer */
-.footer-translucent {
-  background-color: rgba(0, 0, 0, 0.5); /* Black translucent */
-  backdrop-filter: blur(8px); /* Optional blur for effect */
-}
-
-/* Translucent Backgrounds */
-.bg-red-translucent {
-  background-color: rgba(220, 38, 38, 0.658); /* Red translucent */
-}
-
-.bg-black-translucent {
-  background-color: rgba(0, 0, 0, 0.5); /* Black translucent */
-}
-
-/* Optional Backdrop Blur */
-.backdrop-blur-md {
-  backdrop-filter: blur(8px); /* Adjust blur intensity as needed */
-}
-
-/* Background section styles */
-.background-section {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh; /* Full-screen height */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Overlay for better text contrast */
-.overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* Optional dark overlay */
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-/* Utility: Center aligned text */
-.text-center {
-  text-align: center;
-}
-
-/* Utility: Bold font */
-.font-bold {
-  font-weight: bold;
-}
-
-/* Utility: Add spacing between sections */
-.section-spacing {
-  margin: 20px 0;
+button,
+a {
+  font: inherit;
 }
