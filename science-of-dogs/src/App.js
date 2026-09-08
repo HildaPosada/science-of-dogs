@@ -8,21 +8,21 @@ const methodSteps = [
     image: '/A-Person calmly standing near a seated dog.png',
     alt: 'A person calmly standing near a seated dog',
     title: 'Establish safety',
-    description: 'A family member stays near the dog at a comfortable distance.',
+    description: 'A family member stays nearby, close enough to be present and far enough for the dog to remain at ease.',
   },
   {
     id: 'B',
     image: '/B-Hand repeatedly attaching a leash clip to the collar.png',
     alt: 'A hand repeatedly attaching a leash clip to a dog collar',
     title: 'Repeat one task',
-    description: 'A family member repeats one specific interaction with the dog.',
+    description: 'One small interaction is repeated, allowing pattern and response to become visible.',
   },
   {
     id: 'C',
     image: '/C-Three people observing a calm dog.png',
     alt: 'Three people observing a calm dog together',
     title: 'Observe the whole',
-    description: 'The dog is observed across the full combined scenario.',
+    description: 'The separate observations are brought together, and the dog is considered as a whole.',
   },
 ];
 
@@ -32,8 +32,8 @@ const researchTopics = [
     image: '/research-cortisol.webp',
     imagePosition: '68% center',
     category: 'Stress',
-    description: 'A noninvasive measure commonly used in studies of canine stress.',
-    meaning: 'Stress chemistry can change attention, recovery, and how available a dog is for learning.',
+    description: 'A quiet chemical record of stress, often measured without disturbing the dog.',
+    meaning: 'Stress chemistry can alter attention, recovery, and a dog’s capacity to learn.',
     label: 'Explore studies',
     href: 'https://pubmed.ncbi.nlm.nih.gov/?term=dog+salivary+cortisol+stress',
   },
@@ -41,8 +41,8 @@ const researchTopics = [
     title: 'Aversive Training',
     image: '/research-aversive.webp',
     category: 'Learning',
-    description: 'Comparative welfare research examines the effects of training methods.',
-    meaning: 'How we teach can affect both immediate behavior and the dog’s emotional welfare.',
+    description: 'Welfare research asks what different methods teach beyond the behavior we can see.',
+    meaning: 'How we teach can shape both the immediate response and the emotional life beneath it.',
     label: 'Read the study',
     href: 'https://doi.org/10.1371/journal.pone.0225023',
   },
@@ -50,8 +50,8 @@ const researchTopics = [
     title: 'Aggression and Reactivity',
     image: '/research-reactivity.webp',
     category: 'Behavior',
-    description: 'Behavior science considers context, communication, and individual history.',
-    meaning: 'A visible reaction is information about the dog’s state, not a complete description of the dog.',
+    description: 'Behavior becomes more legible when context, communication, and personal history are allowed into the frame.',
+    meaning: 'A reaction tells us something about a dog’s present state. It does not tell us everything about the dog.',
     label: 'Explore studies',
     href: 'https://pubmed.ncbi.nlm.nih.gov/?term=dog+aggression+reactivity+behavior',
   },
@@ -59,8 +59,8 @@ const researchTopics = [
     title: 'Normal Dog Behavior',
     image: '/research-normal.webp',
     category: 'Behavior',
-    description: 'Understanding typical canine behavior helps frame humane support and training.',
-    meaning: 'Recognizing species-typical behavior helps separate a problem from a normal canine need.',
+    description: 'Not everything inconvenient is abnormal, and not every difference needs correcting.',
+    meaning: 'Recognizing ordinary canine needs helps us distinguish distress from the simple fact of being a dog.',
     label: 'Read AVSAB resources',
     href: 'https://avsab.org/resources/position-statements/',
   },
@@ -68,8 +68,8 @@ const researchTopics = [
     title: 'Longevity',
     image: '/research-longevity.webp',
     category: 'Health',
-    description: 'Long-term research explores the factors that shape healthy canine aging.',
-    meaning: 'Genetics, environment, relationships, and daily care all contribute to how dogs age.',
+    description: 'Long-term research follows the many small conditions from which a canine life is made.',
+    meaning: 'Genes matter, but so do environment, relationships, daily care, and time.',
     label: 'Visit the project',
     href: 'https://dogagingproject.org/',
   },
@@ -77,8 +77,8 @@ const researchTopics = [
     title: 'Air Quality',
     image: '/research-air-quality.webp',
     category: 'Environment',
-    description: 'Environmental-health research considers how air pollution affects companion animals.',
-    meaning: 'The spaces dogs share with us can influence respiratory health and long-term wellbeing.',
+    description: 'Environmental health begins with the air that dogs and humans quietly share.',
+    meaning: 'The ordinary atmosphere of a home can shape respiratory health and long-term wellbeing.',
     label: 'Explore studies',
     href: 'https://pubmed.ncbi.nlm.nih.gov/?term=dog+air+pollution+health',
   },
@@ -88,22 +88,22 @@ const pathwayStages = [
   {
     name: 'Sensory input',
     short: 'Notice',
-    description: 'A sound, sight, smell, touch, or internal sensation enters the nervous system.',
+    description: 'A sound, a scent, a movement, a touch. The world arrives before the dog has decided what it means.',
   },
   {
     name: 'Thalamus',
     short: 'Relay',
-    description: 'Sensory information is rapidly routed toward systems that help the dog respond.',
+    description: 'The signal is carried onward, quickly and without commentary, toward the systems that prepare a response.',
   },
   {
     name: 'Amygdala',
     short: 'Assess',
-    description: 'Emotional significance and possible threat are evaluated using biology and experience.',
+    description: 'Biology meets memory. The nervous system asks its oldest practical question: is this safe?',
   },
   {
     name: 'Prefrontal cortex',
     short: 'Regulate',
-    description: 'When the dog has enough safety and capacity, flexible evaluation and learned responses become more available.',
+    description: 'With enough safety and capacity, the dog gains access to choice, flexibility, and what experience has taught.',
   },
 ];
 
@@ -112,7 +112,7 @@ const pathwayScenes = [
   {
     name: 'The whole response',
     short: 'Understand',
-    description: 'Behavior is the visible outcome of a nervous system responding to biology, experience, and the present environment.',
+    description: 'What we call behavior is the visible end of an invisible conversation among biology, experience, and the present moment.',
   },
 ];
 
@@ -188,8 +188,8 @@ const App = () => {
       <main id="main">
         <section id="home" className="scene scene-hero" style={{ backgroundImage: "url('/background-hero-booking.png')" }}>
           <div className="hero-content">
-            <p className="eyebrow">Canine neuroscience · humane practice</p>
-            <h1>Understand the nervous system.<br />Transform the relationship.</h1>
+            <p className="eyebrow">Canine neuroscience · practiced with care</p>
+            <h1>Behavior has a history.<br />Change begins by listening.</h1>
             <p className="hero-copy">
               Mapping and rewiring neural pathways for dogs and the humans who care for them.
             </p>
@@ -204,12 +204,12 @@ const App = () => {
         <section id="about" className="scene scene-about" style={{ backgroundImage: "url('/background-about-editorial.webp')" }}>
           <div className="content-panel" data-reveal>
             <p className="eyebrow">The practice</p>
-            <h2>Science made humane.</h2>
+            <h2>To look closely is to care better.</h2>
             <p>
-              Led by Kim, Science of Dogs combines canine neuroscience, psychology, and careful observation to understand behavior at its source, instead of simply suppressing its symptoms.
+              Led by Kim, Science of Dogs brings neuroscience, psychology, and careful observation into the same room. Behavior is treated not as an offense to be corrected, but as information to be understood.
             </p>
             <p>
-              Families learn through controlled, hands-on experiences designed to build trust and create lasting change for both dog and human.
+              In calm, structured experiences, families learn to notice what urgency often conceals. Trust grows through attention, and change becomes something dog and human can make together.
             </p>
             <a
               href="https://www.instagram.com/scienceofdogs?igsh=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr"
@@ -229,7 +229,7 @@ const App = () => {
               <p className="eyebrow">The A–B–C method</p>
               <h2>We extract the pain<br />so they can blossom.</h2>
               <p>
-                A planned sequence of real-life scenarios reveals how a dog responds, one controlled step at a time, without overwhelming the nervous system.
+                Real life is introduced in careful increments. Each phase makes the dog’s response easier to read without asking the nervous system to carry more than it can hold.
               </p>
             </div>
 
@@ -254,7 +254,7 @@ const App = () => {
           <div className="section-intro research-intro" data-reveal>
             <p className="eyebrow">Evidence before assumption</p>
             <h2>Research</h2>
-            <p>Science-informed resources for understanding canine behavior, learning, stress, and wellbeing.</p>
+            <p>Research begins where certainty ends. These studies invite a closer look at behavior, learning, stress, and the conditions in which dogs live.</p>
           </div>
 
           <section className={`cinematic-pathway pathway-scene-${activePathway}`} aria-labelledby="pathway-title">
@@ -276,7 +276,7 @@ const App = () => {
               {pathwayScenes.map((scene, index) => <div data-pathway-scene={index} key={scene.name} />)}
             </div>
           </section>
-          <p className="pathway-disclaimer">A simplified conceptual pathway for education. The complete neural system is more complex.</p>
+          <p className="pathway-disclaimer">This is a teaching model of one pathway. A living nervous system is more complex, more connected, and less tidy.</p>
 
           <div className="research-grid" data-reveal>
             {researchTopics.map((topic, index) => (
@@ -306,13 +306,13 @@ const App = () => {
           <div className="case-study-copy" data-reveal>
             <p className="eyebrow">Case study · coming soon</p>
             <h2 id="case-study-title">Thirteen bites were not the whole story.</h2>
-            <p className="case-study-lead">A longitudinal look at what changes when behavior is interpreted as communication rather than defiance.</p>
+            <p className="case-study-lead">Thirteen bites can look like a conclusion. We treated them as the beginning of a question: what had the behavior been trying to say?</p>
             <dl className="case-study-facts">
               <div><dt>Observe</dt><dd>Context, triggers, health, and unmet needs</dd></div>
               <div><dt>Interpret</dt><dd>The nervous-system state beneath the behavior</dd></div>
               <div><dt>Support</dt><dd>Safety, capacity, and repeatable learning</dd></div>
             </dl>
-            <p className="case-study-note">The complete case study will be published only after its timeline and outcomes have been documented for responsible review.</p>
+            <p className="case-study-note">The complete case study will be published when its timeline and outcomes have been documented carefully enough to deserve the reader’s trust.</p>
           </div>
         </section>
       </main>
