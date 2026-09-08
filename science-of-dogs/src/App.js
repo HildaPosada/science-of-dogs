@@ -29,7 +29,8 @@ const methodSteps = [
 const researchTopics = [
   {
     title: 'Cortisol',
-    image: '/background-case-study-editorial.webp',
+    image: '/research-cortisol.webp',
+    imagePosition: '68% center',
     category: 'Stress',
     description: 'A noninvasive measure commonly used in studies of canine stress.',
     meaning: 'Stress chemistry can change attention, recovery, and how available a dog is for learning.',
@@ -38,7 +39,7 @@ const researchTopics = [
   },
   {
     title: 'Aversive Training',
-    image: '/research-training.webp',
+    image: '/research-aversive.webp',
     category: 'Learning',
     description: 'Comparative welfare research examines the effects of training methods.',
     meaning: 'How we teach can affect both immediate behavior and the dog’s emotional welfare.',
@@ -56,7 +57,7 @@ const researchTopics = [
   },
   {
     title: 'Normal Dog Behavior',
-    image: '/background-philosophy-editorial.webp',
+    image: '/research-normal.webp',
     category: 'Behavior',
     description: 'Understanding typical canine behavior helps frame humane support and training.',
     meaning: 'Recognizing species-typical behavior helps separate a problem from a normal canine need.',
@@ -74,7 +75,7 @@ const researchTopics = [
   },
   {
     title: 'Air Quality',
-    image: '/background-about-editorial.webp',
+    image: '/research-air-quality.webp',
     category: 'Environment',
     description: 'Environmental-health research considers how air pollution affects companion animals.',
     meaning: 'The spaces dogs share with us can influence respiratory health and long-term wellbeing.',
@@ -279,7 +280,14 @@ const App = () => {
 
           <div className="research-grid" data-reveal>
             {researchTopics.map((topic, index) => (
-              <article className="research-card" style={{ '--card-image': `url(${topic.image})` }} key={topic.title}>
+              <article
+                className="research-card"
+                style={{
+                  '--card-image': `url(${topic.image})`,
+                  '--card-image-position': topic.imagePosition || 'center',
+                }}
+                key={topic.title}
+              >
                 <span className="research-number">{String(index + 1).padStart(2, '0')}</span>
                 <h3>{topic.title}</h3>
                 <p>{topic.description}</p>

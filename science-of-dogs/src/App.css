@@ -347,7 +347,7 @@ h1, h2, h3, .footer-brand { font-family: var(--display-font); font-style: italic
   transition: background 300ms ease;
 }
 
-.research-card::before { position: absolute; z-index: 0; inset: -5%; content: ''; opacity: 0; background-image: var(--card-image); background-position: center; background-size: cover; transform: scale(1.02); transition: opacity 380ms ease, transform 800ms cubic-bezier(.22,1,.36,1); }
+.research-card::before { position: absolute; z-index: 0; inset: -5%; content: ''; opacity: 0; background-image: var(--card-image); background-position: var(--card-image-position, center); background-size: cover; transform: scale(1.02); transition: opacity 380ms ease, transform 800ms cubic-bezier(.22,1,.36,1); }
 .research-card::after { position: absolute; z-index: 1; inset: 0; content: ''; opacity: 0; background: linear-gradient(180deg, rgba(4,4,4,.28), rgba(4,4,4,.94)); transition: opacity 380ms ease; }
 .research-card > * { position: relative; z-index: 2; }
 .research-card:hover::before, .research-card:focus-within::before { opacity: .72; transform: scale(1.1); }
