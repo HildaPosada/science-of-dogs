@@ -257,27 +257,6 @@ const App = () => {
             <p>Science-informed resources for understanding canine behavior, learning, stress, and wellbeing.</p>
           </div>
 
-          <section className={`cinematic-pathway pathway-scene-${activePathway}`} aria-labelledby="pathway-title">
-            <div className="pathway-sticky">
-              <figure className="pathway-visual">
-                <img src="/illustration-research.webp" alt="Conceptual canine neural pathway from sensory input through the thalamus and amygdala to the prefrontal cortex" />
-              </figure>
-              <div className="pathway-story" aria-live="polite">
-                <p className="eyebrow">{pathwayScenes[activePathway].short} · {String(activePathway + 1).padStart(2, '0')}</p>
-                <h3 id="pathway-title">{pathwayScenes[activePathway].name}</h3>
-                <p>{pathwayScenes[activePathway].description}</p>
-                <div className="pathway-progress" aria-label={`Pathway scene ${activePathway + 1} of ${pathwayScenes.length}`}>
-                  {pathwayScenes.map((scene, index) => <span className={index <= activePathway ? 'is-active' : ''} key={scene.name} />)}
-                </div>
-              </div>
-              {activePathway === pathwayScenes.length - 1 && <p className="pathway-final">Behavior is a nervous-system response, not a character flaw.</p>}
-            </div>
-            <div className="pathway-scroll-track" aria-hidden="true">
-              {pathwayScenes.map((scene, index) => <div data-pathway-scene={index} key={scene.name} />)}
-            </div>
-          </section>
-          <p className="pathway-disclaimer">A simplified conceptual pathway for education. The complete neural system is more complex.</p>
-
           <div className="research-grid" data-reveal>
             {researchTopics.map((topic, index) => (
               <article
@@ -299,6 +278,27 @@ const App = () => {
           </div>
 
           <p className="source-note">Sources are provided for further reading and should be reviewed before any clinical or training decision.</p>
+
+          <section className={`cinematic-pathway pathway-scene-${activePathway}`} aria-labelledby="pathway-title">
+            <div className="pathway-sticky">
+              <figure className="pathway-visual">
+                <img src="/illustration-research.webp" alt="Conceptual canine neural pathway from sensory input through the thalamus and amygdala to the prefrontal cortex" />
+              </figure>
+              <div className="pathway-story" aria-live="polite">
+                <p className="eyebrow">{pathwayScenes[activePathway].short} · {String(activePathway + 1).padStart(2, '0')}</p>
+                <h3 id="pathway-title">{pathwayScenes[activePathway].name}</h3>
+                <p>{pathwayScenes[activePathway].description}</p>
+                <div className="pathway-progress" aria-label={`Pathway scene ${activePathway + 1} of ${pathwayScenes.length}`}>
+                  {pathwayScenes.map((scene, index) => <span className={index <= activePathway ? 'is-active' : ''} key={scene.name} />)}
+                </div>
+              </div>
+              {activePathway === pathwayScenes.length - 1 && <p className="pathway-final">Behavior is a nervous-system response, not a character flaw.</p>}
+            </div>
+            <div className="pathway-scroll-track" aria-hidden="true">
+              {pathwayScenes.map((scene, index) => <div data-pathway-scene={index} key={scene.name} />)}
+            </div>
+          </section>
+          <p className="pathway-disclaimer">A simplified conceptual pathway for education. The complete neural system is more complex.</p>
         </section>
 
         <section className="case-study-section" aria-labelledby="case-study-title">
