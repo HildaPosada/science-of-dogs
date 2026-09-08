@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders the Science of Dogs experience and primary navigation', () => {
+test('renders the private launch experience without public navigation', () => {
   render(<App />);
-  expect(screen.getByRole('heading', { name: /behavior has a history.*understand the nervous system/i })).toBeInTheDocument();
-  expect(screen.getByRole('navigation', { name: /primary navigation/i })).toBeInTheDocument();
-  expect(screen.getByRole('heading', { name: 'Research' })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /coming soon/i })).toBeInTheDocument();
+  expect(screen.getByText(/mapping and rewiring neural pathways/i)).toBeInTheDocument();
+  expect(screen.queryByRole('navigation')).not.toBeInTheDocument();
 });
