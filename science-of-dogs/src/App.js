@@ -262,7 +262,7 @@ const App = () => {
         <section id="research" className="research-section">
           <div className="section-intro research-intro" data-reveal>
             <h2>Research</h2>
-            <p>Science-informed resources for understanding canine behavior, learning, stress, and wellbeing.</p>
+            <p>Research on canine behavior, learning, stress, and wellbeing.</p>
           </div>
 
           <div className="research-grid" data-reveal>

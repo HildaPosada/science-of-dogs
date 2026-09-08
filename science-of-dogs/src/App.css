@@ -338,10 +338,10 @@ h1, h2, h3, .footer-brand { font-family: var(--display-font); font-style: italic
 .research-card {
   position: relative;
   display: flex;
-  min-height: 290px;
+  min-height: 238px;
   flex-direction: column;
   overflow: hidden;
-  padding: clamp(24px, 3vw, 38px);
+  padding: clamp(22px, 2vw, 30px);
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   transition: background 300ms ease;
@@ -353,7 +353,8 @@ h1, h2, h3, .footer-brand { font-family: var(--display-font); font-style: italic
 .research-card:hover::before, .research-card:focus-within::before { opacity: .72; transform: scale(1.1); }
 .research-card:hover::after, .research-card:focus-within::after { opacity: 1; }
 .research-card:hover, .research-card:focus-within { background: rgba(115, 27, 29, 0.2); }
-.research-card h3 { margin-top: 24px; }
+.research-card h3 { margin-top: 18px; }
+.research-card p { margin-top: 10px; line-height: 1.5; }
 
 .research-card a {
   display: inline-flex;
@@ -361,7 +362,7 @@ h1, h2, h3, .footer-brand { font-family: var(--display-font); font-style: italic
   justify-content: space-between;
   gap: 14px;
   margin-top: auto;
-  padding-top: 26px;
+  padding-top: 18px;
   color: var(--coral-light);
   text-decoration: none;
   font-size: 0.78rem;
