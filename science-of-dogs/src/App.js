@@ -51,7 +51,7 @@ const researchTopics = [
     image: '/research-reactivity.webp',
     category: 'Behavior',
     description: 'Behavior science considers context, communication, and individual history.',
-    meaning: 'A visible reaction is information about the dog’s state—not a complete description of the dog.',
+    meaning: 'A visible reaction is information about the dog’s state, not a complete description of the dog.',
     label: 'Explore studies',
     href: 'https://pubmed.ncbi.nlm.nih.gov/?term=dog+aggression+reactivity+behavior',
   },
@@ -206,7 +206,7 @@ const App = () => {
             <p className="eyebrow">The practice</p>
             <h2>Science made humane.</h2>
             <p>
-              Led by Kim, Science of Dogs combines canine neuroscience, psychology, and careful observation to understand behavior at its source—not simply suppress its symptoms.
+              Led by Kim, Science of Dogs combines canine neuroscience, psychology, and careful observation to understand behavior at its source, instead of simply suppressing its symptoms.
             </p>
             <p>
               Families learn through controlled, hands-on experiences designed to build trust and create lasting change for both dog and human.
@@ -229,7 +229,7 @@ const App = () => {
               <p className="eyebrow">The A–B–C method</p>
               <h2>We extract the pain<br />so they can blossom.</h2>
               <p>
-                A planned sequence of real-life scenarios reveals how a dog responds—one controlled step at a time, without overwhelming the nervous system.
+                A planned sequence of real-life scenarios reveals how a dog responds, one controlled step at a time, without overwhelming the nervous system.
               </p>
             </div>
 
@@ -270,7 +270,7 @@ const App = () => {
                   {pathwayScenes.map((scene, index) => <span className={index <= activePathway ? 'is-active' : ''} key={scene.name} />)}
                 </div>
               </div>
-              {activePathway === pathwayScenes.length - 1 && <p className="pathway-final">Behavior is a nervous-system response—not a character flaw.</p>}
+              {activePathway === pathwayScenes.length - 1 && <p className="pathway-final">Behavior is a nervous-system response, not a character flaw.</p>}
             </div>
             <div className="pathway-scroll-track" aria-hidden="true">
               {pathwayScenes.map((scene, index) => <div data-pathway-scene={index} key={scene.name} />)}
